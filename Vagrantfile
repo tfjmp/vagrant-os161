@@ -9,7 +9,7 @@ Vagrant.configure(2) do |config|
     config.vm.box_version = ">= 0.0.2"
   end
   config.ssh.username = "trinity"
-  config.vm.synced_folder "shared", "/home/trinity/shared", create: true, owner: "trinity", group: "trinity"
+  config.vm.synced_folder "./guest", "/home/trinity/shared", create: true, owner: "trinity", group: "trinity"
 
   if Vagrant.has_plugin?("vagrant-timezone")
     config.timezone.value = :host
