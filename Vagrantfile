@@ -42,6 +42,10 @@ Vagrant.configure(2) do |config|
     config.vm.provision "shell", inline: <<-SHELL
         apt-get -qq -o Dpkg::Use-Pty=0 update
         apt-get -qq -o Dpkg::Use-Pty=0 -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
+        add-apt-repository ppa:ops-class/os161-toolchain
+        apt-get -qq -o Dpkg::Use-Pty=0 install os161-toolchain
+        echo "Installation succeeded"
+        echo "Now run vagrant ssh"
     SHELL
 end
 
