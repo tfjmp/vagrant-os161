@@ -1,5 +1,7 @@
-/shared/*
 .bundle
 .vagrant
 *.swp
 *.swo
+
+# guest shared files
+guest/*
